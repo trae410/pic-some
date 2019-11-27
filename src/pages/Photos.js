@@ -1,14 +1,16 @@
 import React, {useContext} from "react"
 import {Context} from '../CartContext'
 import Image from '../components/Image'
+import {getClass} from '../utils/index'
+
 
 const Photos = () => {
 	const {imageData} = useContext(Context)
-	const images = imageData.map(img => {
-		console.log(img)
+	const images = imageData.map((img, i) => {
+		const containerClass = `image-container ${getClass(i)}`
 		return (
-			<div key={img.id} className="image-container">
-				<Image img={img} />
+			<div key={img.id} className={containerClass}>
+				<Image img={img} i={i} />
 			</div>
 		)
 	})
