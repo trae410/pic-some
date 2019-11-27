@@ -6,8 +6,6 @@ import { Switch, Route } from 'react-router-dom'
 import {Context} from './CartContext'
 
 const App = () => {    
-	const test = useContext(Context)
-	console.log("test")
 	return (
 		<div>
 			<Header />

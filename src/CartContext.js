@@ -1,19 +1,18 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 
 const Context = React.createContext()
 // const [photos, setPhotos] = useState([])
 
 
 const CartContextProvider = (props) => {
-
+	const [imageData, setImageData] = useState([])
 	useEffect(() => {
-    const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
-		fetch(url).then(rawData => rawData.json()).then(data => console.log(data))
-		
+    const url = "https://raw.githubusercontent.com/trae410/pic-some/master/public/images.json"
+		fetch(url).then(rawData => rawData.json()).then(data => setImageData(data))
 	},[])
 
 	return (
-		<Context.Provider value="test">
+		<Context.Provider value={{imageData}}>
 			{props.children}
 		</Context.Provider>
 	)
