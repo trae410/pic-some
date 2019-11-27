@@ -9,9 +9,7 @@ const Photos = () => {
 	const images = imageData.map((img, i) => {
 		const containerClass = `image-container ${getClass(i)}`
 		return (
-			<div key={img.id} className={containerClass}>
-				<Image img={img} i={i} />
-			</div>
+				<Image img={img} key={img.id} className={containerClass} />
 		)
 	})
 	return (

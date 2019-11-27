@@ -1,9 +1,9 @@
-import React, {useContext} from "react"
+import React from "react"
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
 import { Switch, Route } from 'react-router-dom'
-import {Context} from './CartContext'
+// import {Context} from './CartContext'
 
 const App = () => {    
 	return (

@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react'
+import {useState, useRef, useEffect} from 'react'
 
 const useHover = () => {
 	const [isHovering, setIsHovering] = useState(false)
@@ -12,18 +12,19 @@ const useHover = () => {
 	}
 
 	useEffect(() => {
+		const current = ref.current
 		//add hover listeners
-		ref.current.addEventListener("mouseenter", mouseEnter)
-		ref.current.addEventListener("mouseleave", mouseLeave)
+		current.addEventListener("mouseenter", mouseEnter)
+		current.addEventListener("mouseleave", mouseLeave)
 
 		//cleanup
 		return () => {
-			ref.current.removeEventListener("mouseenter", mouseEnter)
-			ref.current.removedventListener("mouseleave", mouseLeave)
+			current.removeEventListener("mouseenter", mouseEnter)
+			current.removeEventListener("mouseleave", mouseLeave)
 		}
 	},[])
 
-	return {isHovering, ref}
+	return [isHovering, ref]
 }
 
 export default useHover 
