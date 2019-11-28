@@ -31,6 +31,10 @@ const CartContextProvider = (props) => {
 		setCartItems(newCartItems)
 	}
 
+	const emptyCart = ()  => {
+		setCartItems([])
+	}
+
 	useEffect(() => {
     const url = "https://raw.githubusercontent.com/trae410/pic-some/master/public/images.json"
 		fetch(url).then(rawData => rawData.json()).then(data => setImageData(data))
@@ -42,7 +46,8 @@ const CartContextProvider = (props) => {
 			toggleFavorite,
 			addToCart,
 			removeFromCart,
-			cartItems
+			cartItems,
+			emptyCart
 		}}>
 			{props.children}
 		</Context.Provider>
