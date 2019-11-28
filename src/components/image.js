@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import useHover from '../hooks/useHover';
 import {Context} from '../CartContext'
+import PropTypes from 'prop-types'
 
 
 const Image = ({className, img}) => {
@@ -37,6 +38,15 @@ const Image = ({className, img}) => {
 			{cartIcon()}
 		</div>
 	)
+}
+
+Image.propTypes = {
+	className: PropTypes.string.isRequired,
+	img: PropTypes.shape({
+		url: PropTypes.string.isRequired,
+		id: PropTypes.string.isRequired,
+		isFavorite: PropTypes.bool.isRequired
+	})
 }
 
 export default Image

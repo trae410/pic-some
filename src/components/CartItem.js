@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Context} from '../CartContext'
 import useHover from '../hooks/useHover'
+import PropTypes from 'prop-types'
 
 const CartItem = ({item}) => {
 	// get cart items and show them on this page with a delete icon and price
@@ -16,6 +17,14 @@ const CartItem = ({item}) => {
 			<p>$ {item.price}</p>
 		</div>
 	);
+}
+
+CartItem.propTypes = {
+	item: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		url: PropTypes.string.isRequired,
+		price: PropTypes.string
+	})
 }
 
 export default CartItem

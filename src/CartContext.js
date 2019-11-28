@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState} from 'react'
+import PropTypes from 'prop-types'
 
 const Context = React.createContext()
 
-
-const CartContextProvider = (props) => {
+const CartContextProvider = ({children}) => {
 	const [imageData, setImageData] = useState([])
 	const [cartItems, setCartItems] = useState([])
 
@@ -49,10 +49,13 @@ const CartContextProvider = (props) => {
 			cartItems,
 			emptyCart
 		}}>
-			{props.children}
+			{children}
 		</Context.Provider>
 	)
+}
 
+CartContextProvider.propTypes = {
+	children: PropTypes.object
 }
 
 export {CartContextProvider, Context}

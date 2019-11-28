@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext} from 'react'
 import {Context} from '../CartContext'
 import Image from '../components/Image'
 import {getClass} from '../utils/index'
@@ -9,7 +9,7 @@ const Photos = () => {
 	const images = imageData.map((img, i) => {
 		const containerClass = `image-container ${getClass(i)}`
 		return (
-				<Image img={img} key={img.id} className={containerClass} />
+			<Image img={img} key={img.id} className={containerClass} />
 		)
 	})
 	return (
