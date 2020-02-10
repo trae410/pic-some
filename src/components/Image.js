@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import useHover from '../hooks/useHover';
 import {Context} from '../CartContext'
 import PropTypes from 'prop-types'
+// test Git changes
 
 
 const Image = ({className, img}) => {
